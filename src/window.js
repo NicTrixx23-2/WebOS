@@ -101,6 +101,46 @@ function hideWindow(button) {
     windowElement.classList.add("hidden");
   }
 }
+
+function fullscreenWindow(target) {
+  let windowElement = null;
+
+  if (typeof target === "string") {
+    windowElement = document.getElementById(target);
+  } else if (target?.classList?.contains("window")) {
+    windowElement = target;
+  } else if (target?.closest) {
+    windowElement = target.closest(".window");
+  }
+
+  if (!windowElement) return;
+
+  if (windowElement.dataset.isFullscreen === "true") {
+    windowElement.style.width = windowElement.dataset.prevWidth || windowElement.style.width;
+    windowElement.style.height = windowElement.dataset.prevHeight || windowElement.style.height;
+    windowElement.style.left = windowElement.dataset.prevLeft || windowElement.style.left;
+    windowElement.style.top = windowElement.dataset.prevTop || windowElement.style.top;
+    windowElement.dataset.isFullscreen = "false";
+    focusWindow(windowElement);
+    return;
+  }
+
+  const winRect = windowElement.getBoundingClientRect();
+  const deskRect = desktop.getBoundingClientRect();
+
+  windowElement.dataset.prevWidth = `${winRect.width}px`;
+  windowElement.dataset.prevHeight = `${winRect.height}px`;
+  windowElement.dataset.prevLeft = `${winRect.left - deskRect.left}px`;
+  windowElement.dataset.prevTop = `${winRect.top - deskRect.top}px`;
+  windowElement.dataset.isFullscreen = "true";
+
+  windowElement.style.width = "100%";
+  windowElement.style.height = "100%";
+  windowElement.style.left = "0";
+  windowElement.style.top = "0";
+  focusWindow(windowElement);
+}
+
 let resizing = null
 
 document.addEventListener("pointerdown", (e) => {

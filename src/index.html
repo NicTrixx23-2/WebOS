@@ -11,9 +11,8 @@
   <div class="titlebar">
     <span class="title">Notes</span>
     <div class="controls">
-      <button class="btn">—</button>
-      <button class="btn">□</button>
-      <button class="btn" onclick="hideWindow(this)">✕</button>
+      <button class="fullscreenBTN" onclick="fullscreenWindow(this)">□</button>
+      <button class="closeBTN" onclick="hideWindow(this)">✕</button>
     </div>
   </div>
 
@@ -39,9 +38,7 @@
     <div class="titlebar">
       <span class="title">Calculator</span>
       <div class="controls">
-        <button class="btn">—</button>
-        <button class="btn">□</button>
-        <button onclick="hideWindow(this)"> ✕ </button>
+        <button class="closeBTN" onclick="hideWindow(this)"> ✕ </button>
       </div>
     </div>
 
@@ -77,13 +74,11 @@
     </div>
   </div>
     </div>
-    <div class="resize-handle"></div>
   </div>
 
   <ul id="taskbar">
-  <li><a href="#" class="active">Home</a></li>
-  <li><button onclick="openWindow('notepadWindow')">Notes</button></li>
-  <li><button onclick="openWindow('calculatorWindow')">Calc</button></li>
+  <li><button class="taskbarBTN" onclick="openWindow('notepadWindow')"><img class="taskbarIMG" src="images/background/notes.png"></button></li>
+  <li><button class="taskbarBTN" onclick="openWindow('calculatorWindow')"><img class="taskbarIMG" src="images/background/calc.png"></button></li>
 </ul>
 </div>
 <script src="calc.js"></script>
