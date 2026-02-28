@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebOS</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+<div id="desktop">
+  <div id="notepadWindow" class="window hidden" style="left:80px; top:60px; width:360px; height:240px;">
+  <div class="titlebar">
+    <span class="title">Notes</span>
+    <div class="controls">
+      <button class="btn">—</button>
+      <button class="btn">□</button>
+      <button class="btn" onclick="hideWindow(this)">✕</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="notes-app">
+      <div class="sidebar">
+        <button id="newNoteBtn">+ New</button>
+        <ul id="noteList"></ul>
+      </div>
+
+      <div class="editor-area">
+        <input id="noteTitle" placeholder="Note name..." />
+        <textarea id="editor"></textarea>
+        <button id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="resize-handle"></div>
+</div>
+
+  <div id="calculatorWindow" class="window hidden" style="left: 220px; top: 160px; width: 600; height: 500px;">
+    <div class="titlebar">
+      <span class="title">Calculator</span>
+      <div class="controls">
+        <button class="btn">—</button>
+        <button class="btn">□</button>
+        <button onclick="hideWindow(this)"> ✕ </button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="calculator">
+    <input type="text" id="screen">
+
+    <div class="buttons">
+      <button value="clear">C</button>
+      <button value="delete">DEL</button>
+      <button value="(">(</button>
+      <button value=")">)</button>
+
+      <button value="7">7</button>
+      <button value="8">8</button>
+      <button value="9">9</button>
+      <button value="/">÷</button>
+
+      <button value="4">4</button>
+      <button value="5">5</button>
+      <button value="6">6</button>
+      <button value="*">×</button>
+
+      <button value="1">1</button>
+      <button value="2">2</button>
+      <button value="3">3</button>
+      <button value="-">−</button>
+
+      <button value="0">0</button>
+      <button value=".">.</button>
+      <button value="+">+</button>
+      <button value="=">=</button>
+    </div>
+  </div>
+    </div>
+    <div class="resize-handle"></div>
+  </div>
+
+  <ul id="taskbar">
+  <li><a href="#" class="active">Home</a></li>
+  <li><button onclick="openWindow('notepadWindow')">Notes</button></li>
+  <li><button onclick="openWindow('calculatorWindow')">Calc</button></li>
+</ul>
+</div>
+<script src="calc.js"></script>
+<script src="notes.js"></script>
+<script src="window.js"></script>
+  </body>
+</html>
