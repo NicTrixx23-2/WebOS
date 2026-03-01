@@ -64,7 +64,6 @@ function createWindow() {
   })
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'))
-  mainWindow.webContents.openDevTools({ mode: 'detach' })
   mainWindow.once('ready-to-show', () => {
     mainWindow.maximize()
     mainWindow.show()
