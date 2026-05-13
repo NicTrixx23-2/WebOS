@@ -1,14 +1,10 @@
-# WebOS
-
-A Simple WebOS im working on
-
-## Features
-- Notes
-- Calculator
-- Browser(Still very WIP)
-- Clock
-- Login System using local Files
-
-## How it Works
-The WebOS is built using Electron, to make it into a desktop app.
-
+## WebOS
+WebOS is a simple desktop OS I’m building as a learning project.
+## ✨ Features
+•	Notes: Basic note-taking app
+•	Calculator: Simple math tool
+•	Browser: Early web browser (WIP)
+•	Clock: Time and date display
+•	Login: File-based user authentication
+## 🛠 How It Works
+Built with Electron – turns HTML/CSS/JS into a cross-platform desktop app (Windows, macOS, Linux).
